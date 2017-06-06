@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+        }
+
+        .content {
+            position: relative;
+            width: 300px;
+            height: 50px;
+        }
+        .square {
+            position: relative;
+            width: 28px;
+            height: 28px;
+            background: #ff0000;
+            pointer-events: none;
+        }
+        .shadow {
+            position: absolute;
+            opacity: .2;
+        }
+        .el {
+            transform: translate3d(0,0,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="cssSelector">
+        <div class="square shadow"></div>
+        <div class="square el"></div>
+    </div>
+
+<script src="src/anime.min.js"></script>
+<script>
+    var cssSelector = anime({
+        targets: '#cssSelector .el',
+        translateX: 250,
+        easing: 'easeInOutQuart'
+    });
+
+</script>
+</body>
+</html>
